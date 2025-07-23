@@ -1,0 +1,12 @@
+<div id="loginModal" class="modal">
+    <div class="modal-content" style="width: 18.5%;">
+      <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <h3>Iniciar Sesión</h3>
+        {{ form.as_p }}
+        <input type="hidden" name="next" value="/">
+        <button type="submit">Entrar</button>
+        <button type="button" onclick="toggleModal()">Cancelar</button>
+      </form>
+    </div>
+  </div>
