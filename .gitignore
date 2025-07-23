@@ -1,0 +1,260 @@
+# ======================
+# 🐍 Python
+# ======================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*$py.class
+*.so
+
+# ======================
+# 🔧 Django
+# ======================
+*.sqlite3
+db.sqlite3
+*.log
+*.pot
+*.pyc
+*.pyo
+*.mo
+*.db
+*.dump
+*.bak# ======================
+# 🐍 Python
+# ======================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*$py.class
+*.so
+
+# ======================
+# 🔧 Django
+# ======================
+*.sqlite3
+db.sqlite3
+*.log
+*.pot
+*.pyc
+*.pyo
+*.mo
+*.db
+*.dump
+*.bak
+
+# Django Migrations
+**/migrations/
+!*/migrations/__init__.py
+
+# ======================
+# ⚙️ Virtual Envs
+# ======================
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+intrapalenv/
+intrapalenv
+
+# ======================
+# 📦 Package Managers
+# ======================
+pip-log.txt
+pip-delete-this-directory.txt
+poetry.lock
+Pipfile.lock
+
+# ======================
+# 🐳 Docker
+# ======================
+*.pid
+*.seed
+*.tar
+docker-compose.override.yml
+# Docker volumes and runtime
+volumes/
+*.sock
+
+# ======================
+# 🧪 Testing
+# ======================
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+.coverage
+.cache
+nosetests.xml
+test-results/
+
+# ======================
+# 📝 IDEs & OS
+# ======================
+.vscode/
+.idea/
+*.swp
+*.swo
+*.DS_Store
+*.AppleDouble
+*.LSOverride
+*.orig
+*.sublime-*
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# ======================
+# 🔐 Secrets (if any manually added)
+# ======================
+.env.*
+*.key
+*.pem
+*.crt
+*.enc
+
+# ======================
+# 🛠 Build / Dist
+# ======================
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ======================
+# 🗃️ Byte-compiled & compiled
+# ======================
+*.manifest
+*.spec
+
+# ======================
+# 🔍 MyPy & Pyright
+# ======================
+.mypy_cache/
+.dmypy.json
+.pyright/
+.pyre/
+
+
+# Django Migrations
+**/migrations/
+!*/migrations/__init__.py
+
+# ======================
+# ⚙️ Virtual Envs
+# ======================
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+intrapalenv/
+intrapalenv
+
+# ======================
+# 📦 Package Managers
+# ======================
+pip-log.txt
+pip-delete-this-directory.txt
+poetry.lock
+Pipfile.lock
+
+# ======================
+# 🐳 Docker
+# ======================
+*.pid
+*.seed
+*.tar
+docker-compose.override.yml
+# Docker volumes and runtime
+volumes/
+*.sock
+
+# ======================
+# 🧪 Testing
+# ======================
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+.coverage
+.cache
+nosetests.xml
+test-results/
+
+# ======================
+# 📝 IDEs & OS
+# ======================
+.vscode/
+.idea/
+*.swp
+*.swo
+*.DS_Store
+*.AppleDouble
+*.LSOverride
+*.orig
+*.sublime-*
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# ======================
+# 🔐 Secrets (if any manually added)
+# ======================
+.env.*
+*.key
+*.pem
+*.crt
+*.enc
+
+# ======================
+# 🛠 Build / Dist
+# ======================
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ======================
+# 🗃️ Byte-compiled & compiled
+# ======================
+*.manifest
+*.spec
+
+# ======================
+# 🔍 MyPy & Pyright
+# ======================
+.mypy_cache/
+.dmypy.json
+.pyright/
+.pyre/
