@@ -127,3 +127,8 @@ def dashboard_view(request):
     }
 
     return render(request, 'dashboard.html', context)
+
+@login_required
+def log_view(request):
+    logs = PalletLog.objects.order_by('-timestamp')[:100]  # limit for performance
+    return render(request, 'logs.html', {'logs': logs})

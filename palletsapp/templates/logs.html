@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+{% block main_canvas %}
+
+    <div class="w3-container" style="margin-top:80px; margin-bottom: 50px;" id="showcase">
+        <h1 class="w3-jumbo"><b>Logs</b></h1>
+        <h1 class="w3-xxxlarge w3-text-red"><b>INTRAPAL S.A.</b></h1>
+        <hr style="width:50px;border:5px solid red" class="w3-round">
+    
+        <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 15px; max-width: 250px;">
+            <a href="{% url 'home' %}">
+                <button class="w3-button w3-block w3-red">Regresar a Home</button>
+            </a>
+            <a href="{% url 'pallet_admin' %}">
+                <button class="w3-button w3-block w3-blue">Administrar Pallets</button>
+            </a>
+            <a href="{% url 'dashboard' %}">
+                <button class="w3-button w3-block w3-green">Dashboard</button>
+            </a>
+        </div>  
+
+    <div class="w3-container" style="margin-top:80px">
+        <h2 class="w3-xxlarge">📜 Registro de Actividades</h2>
+        <hr style="width:50px;border:5px solid gray" class="w3-round">
+    
+        <table class="w3-table-all w3-hoverable w3-small">
+          <thead>
+            <tr class="w3-light-grey">
+              <th>Fecha</th>
+              <th>Usuario</th>
+              <th>Acción</th>
+              <th>Datos</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for log in logs %}
+              <tr>
+                <td>{{ log.timestamp|date:"Y-m-d H:i:s" }}</td>
+                <td>{{ log.username }}</td>
+                <td>{{ log.get_action_display }}</td>
+                <td>
+                  <pre style="white-space: pre-wrap;">{{ log.payload|json_script:"log"|safe }}</pre>
+                </td>
+              </tr>
+            {% empty %}
+              <tr>
+                <td colspan="4">No hay logs registrados.</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+{% endblock %}
