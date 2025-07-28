@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+{% block main_canvas %}
+
+    <div class="w3-container" style="margin-top:80px; margin-bottom: 50px;" id="showcase">
+        <h1 class="w3-jumbo"><b>Panel de transacciones</b></h1>
+        <h1 class="w3-xxxlarge w3-text-red"><b>INTRAPAL S.A.</b></h1>
+        <hr style="width:50px;border:5px solid red" class="w3-round">
+    
+        <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 15px; max-width: 250px;">
+        <a href="{% url 'home' %}">
+            <button class="w3-button w3-block w3-red">Regresar a Home</button>
+        </a>
+        <a href="{% url 'dashboard' %}">
+            <button class="w3-button w3-block w3-green">Dashboard</button>
+        </a>
+      
+        <a href="#">
+            <button class="w3-button w3-block w3-dark-grey">Ver Logs</button>
+        </div>
+    </div>  
+
+  <h2>Entrada de Pallets</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ in_form.as_p }}
+    <button type="submit" name="stock_in_submit">Agregar</button>
+  </form>
+
+  <h2>Salida de Pallets</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ out_form.as_p }}
+    <button type="submit" name="stock_out_submit">Retirar</button>
+  </form>
+
+  <h2>Resetear Stock</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ reset_form.as_p }}
+    <button type="submit" name="reset_submit">Resetear</button>
+  </form>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.get("error") === "1") {
+      alert("No se puede realizar una salida por esa cantidad: supera el stock disponible.");
+    }
+
+    if (params.get("error") === "2") {
+      alert("No existe stock para esa calidad.");
+    }
+
+    if (params.get("reset") === "1") {
+      const quality = params.get("quality");
+      const qty = params.get("qty");
+      alert(`¿Está seguro que quiere resetear el stock de calidad ${quality} a ${qty} unidades?`);
+    }
+  </script>
+{% endblock %}

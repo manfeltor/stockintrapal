@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% block main_canvas %}
+
+    <div class="w3-container" style="margin-top:80px; margin-bottom: 50px;" id="showcase">
+        <h1 class="w3-jumbo"><b>Dashboard</b></h1>
+        <h1 class="w3-xxxlarge w3-text-red"><b>INTRAPAL S.A.</b></h1>
+        <hr style="width:50px;border:5px solid red" class="w3-round">
+    
+        <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 15px; max-width: 250px;">
+        <a href="{% url 'home' %}">
+            <button class="w3-button w3-block w3-red">Regresar a Home</button>
+        </a>
+        <a href="{% url 'pallet_admin' %}">
+            <button class="w3-button w3-block w3-blue">Administrar Pallets</button>
+        </a>
+        <a href="#">
+            <button class="w3-button w3-block w3-dark-grey">Ver Logs</button>
+        </div>
+    </div>  
+
+    <div class="w3-container" style="margin-top:80px">
+        <h2 class="w3-xxlarge">📦 Stock Actual</h2>
+        <hr style="width:50px;border:5px solid green" class="w3-round">
+      
+        <div class="w3-panel w3-pale-green w3-leftbar w3-border-green">
+          <p><b>Total Stock:</b> {{ total_stock }}</p>
+          <p><b>Total Stock (no Scrap):</b> {{ total_ok_stock }}</p>
+        </div>
+      
+        <table class="w3-table-all w3-card-4 w3-hoverable" style="margin-top:20px; max-width:600px;">
+          <thead>
+            <tr class="w3-green">
+              <th>Calidad</th>
+              <th>Estado</th>
+              <th>Cantidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>A</td><td>OK</td><td>{{ a_ok }}</td></tr>
+            <tr><td>A</td><td>Scrap</td><td>{{ a_scrap }}</td></tr>
+            <tr><td>B</td><td>OK</td><td>{{ b_ok }}</td></tr>
+            <tr><td>B</td><td>Scrap</td><td>{{ b_scrap }}</td></tr>
+            <tr><td>Sin calidad</td><td>OK</td><td>{{ null_ok }}</td></tr>
+            <tr><td>Sin calidad</td><td>Scrap</td><td>{{ null_scrap }}</td></tr>
+          </tbody>
+        </table>
+    </div>
+      
+  
+{% endblock %}
