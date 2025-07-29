@@ -13,9 +13,19 @@ class StockInForm(forms.Form):
         ('', 'Sin calidad'),
     ]
 
-    method = forms.ChoiceField(choices=METHOD_CHOICES)
-    quality = forms.ChoiceField(choices=QUALITY_CHOICES, required=False)
-    quantity = forms.IntegerField(min_value=1)
+    method = forms.ChoiceField(
+        choices=METHOD_CHOICES,
+        label="Método de ingreso"
+    )
+    quality = forms.ChoiceField(
+        choices=QUALITY_CHOICES,
+        required=False,
+        label="Calidad"
+    )
+    quantity = forms.IntegerField(
+        min_value=1,
+        label="Cantidad"
+    )
 
 
 class StockOutForm(forms.Form):
@@ -31,9 +41,19 @@ class StockOutForm(forms.Form):
         ('', 'Sin calidad'),
     ]
 
-    method = forms.ChoiceField(choices=METHOD_CHOICES)
-    quality = forms.ChoiceField(choices=QUALITY_CHOICES, required=False)
-    quantity = forms.IntegerField(min_value=1)
+    method = forms.ChoiceField(
+        choices=METHOD_CHOICES,
+        label="Método de salida"
+    )
+    quality = forms.ChoiceField(
+        choices=QUALITY_CHOICES,
+        required=False,
+        label="Calidad"
+    )
+    quantity = forms.IntegerField(
+        min_value=1,
+        label="Cantidad"
+    )
 
 
 class ResetStockForm(forms.Form):
@@ -43,5 +63,12 @@ class ResetStockForm(forms.Form):
         ('', 'Sin calidad'),
     ]
 
-    quality = forms.ChoiceField(choices=QUALITY_CHOICES, required=False)
-    quantity = forms.IntegerField(min_value=0)
+    quality = forms.ChoiceField(
+        choices=QUALITY_CHOICES,
+        required=False,
+        label="Calidad"
+    )
+    quantity = forms.IntegerField(
+        min_value=1,
+        label="Cantidad"
+    )

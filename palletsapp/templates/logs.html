@@ -38,7 +38,7 @@
                 <td>{{ log.username }}</td>
                 <td>{{ log.get_action_display }}</td>
                 <td>
-                  <pre style="white-space: pre-wrap;">{{ log.payload|json_script:"log"|safe }}</pre>
+                  <pre style="white-space: pre-wrap;">{{ log.payload }}</pre>
                 </td>
               </tr>
             {% empty %}

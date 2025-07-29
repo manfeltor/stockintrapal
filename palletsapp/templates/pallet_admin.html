@@ -20,21 +20,21 @@
         </div>
     </div>  
 
-  <h2>Entrada de Pallets</h2>
+  <h2 class="w3-red" style="padding-top: 10px;">Entrada de Pallets</h2>
   <form method="post">
     {% csrf_token %}
     {{ in_form.as_p }}
     <button type="submit" name="stock_in_submit">Agregar</button>
   </form>
 
-  <h2>Salida de Pallets</h2>
+  <h2 class="w3-red" style="padding-top: 10px;">Salida de Pallets</h2>
   <form method="post">
     {% csrf_token %}
     {{ out_form.as_p }}
     <button type="submit" name="stock_out_submit">Retirar</button>
   </form>
 
-  <h2>Resetear Stock</h2>
+  <h2 class="w3-red" style="padding-top: 10px;">Resetear Stock</h2>
   <form method="post">
     {% csrf_token %}
     {{ reset_form.as_p }}
