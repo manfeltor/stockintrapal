@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    container_name: stockintrapal_web
+    command: gunicorn stockintrapal.wsgi:application --bind 0.0.0.0:8080 --workers=3
+    ports:
+      - "8080:8080"

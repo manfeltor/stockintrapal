@@ -15,5 +15,7 @@ DB_PORT = os.environ.get('DB_PORT', config('DB_PORT'))
 SECRET_KEY = os.environ.get('SECRET_KEY', config('SECRET_KEY'))
 APPHOST = os.environ.get('APPHOST', config('APPHOST'))
 PRFTAPIKEY = os.environ.get('PRFTAPIKEY', config('PRFTAPIKEY'))
+DJANGO_CSRF_ORIGIN = os.environ.get('DJANGO_CSRF_ORIGIN', config('DJANGO_CSRF_ORIGIN', default=''))
+DJANGO_ALLOWED_HOST = os.environ.get('DJANGO_ALLOWED_HOST', config('DJANGO_ALLOWED_HOST', default='*'))
 
 frmids = [7, 3, 4, 5]

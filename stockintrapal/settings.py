@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
-from .authvars import DB_NAME, DB_USR, DB_PASS, DB_HOST, DB_PORT, DEBUG, SECRET_KEY
+from .authvars import DB_NAME, DB_USR, DB_PASS, DB_HOST, DB_PORT, DEBUG, SECRET_KEY, DJANGO_ALLOWED_HOST, DJANGO_CSRF_ORIGIN
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +26,8 @@ SECRET_KEY = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = DEBUG
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [DJANGO_ALLOWED_HOST]
+CSRF_TRUSTED_ORIGINS = DJANGO_CSRF_ORIGIN
 
 
 # Application definition
