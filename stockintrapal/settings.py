@@ -27,8 +27,14 @@ SECRET_KEY = SECRET_KEY
 DEBUG = DEBUG
 
 ALLOWED_HOSTS = [DJANGO_ALLOWED_HOST]
-CSRF_TRUSTED_ORIGINS = DJANGO_CSRF_ORIGIN
+# CSRF_TRUSTED_ORIGINS = DJANGO_CSRF_ORIGIN
+CSRF_TRUSTED_ORIGINS = [
+    'https://stockintrapal-497967059165.us-central1.run.app'
+]
 
+
+CSRF_COOKIE_SECURE = True  # Ensures CSRF cookie is only sent over HTTPS
+SESSION_COOKIE_SECURE = True  # Ensures session cookies are only sent over HTTPS
 
 # Application definition
 
